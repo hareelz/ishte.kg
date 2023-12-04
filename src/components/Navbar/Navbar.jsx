@@ -12,17 +12,21 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
+import ForumOutlinedIcon from "@mui/icons-material/ForumOutlined";
+
 import "../Navbar/Navbar.css";
+import { Link } from "react-router-dom";
 
 const pages = [
+  "Главная Страница",
   "Как это работает?",
   "Поиск работы",
   "Посты",
+  <ForumOutlinedIcon />,
   "Войти",
-  "Регистрация",
 ];
 const settings = ["Register", "Login", "Logout"];
-// const paths = ["/", "filter", "/chat", "add-posts"];
+const paths = ["/", "/info", "filter", "add-posts", "/auth"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -44,7 +48,11 @@ function Navbar() {
   };
 
   return (
-    <AppBar className="navbar" position="static" sx={{ background: "black" }}>
+    <AppBar
+      className="navbar"
+      position="static"
+      sx={{ position: "fixed", zIndex: "2", background: "black" }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -128,21 +136,25 @@ function Navbar() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{
-                  my: 2,
-                  color: "#fff",
-                  background: "none",
-                  display: "block",
-                  marginLeft: "5em",
-                }}
-                className="navbar-item"
-              >
-                {page}
-              </Button>
+            {pages.map((page, index) => (
+              <Link to={paths[index]} className="navbar_item">
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    height: "5em",
+                    my: 2,
+                    color: "#fff",
+                    background: "none",
+                    margin: "auto 0",
+                    display: "block",
+                    marginLeft: "5em",
+                    fontSize: ".7em",
+                  }}
+                >
+                  {page}
+                </Button>
+              </Link>
             ))}
           </Box>
 

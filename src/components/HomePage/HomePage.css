@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main_block__list {
+  position: absolute;
+  color: #fff;
+}
+
+.main_video {
+  width: 100%;
+}
+
+.main_block {
+  width: 100%;
+}
+
+.main_title {
+  font-size: 3em;
+  position: absolute;
+  color: #fff;
+  width: 12em;
+  top: 3em;
+  left: 1.5em;
+  line-height: 1.5em;
+}
+
+.main_block__content {
+  margin: auto 0;
+}

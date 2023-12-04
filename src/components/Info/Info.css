@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.line2 {
+  position: absolute;
+  width: 80%;
+  top: 39em;
+  left: 7em;
+  height: 0.1em;
+  background: radial-gradient(white, #1d1c1c);
+}
+
+.line1 {
+  position: absolute;
+  width: 80%;
+  top: 53em;
+  left: 7em;
+  height: 0.1em;
+  background: radial-gradient(white, #1d1c1c);
+  z-index: 1;
+}
+/* !MAIN BLOCK START */
+
+.info_block__list {
+  position: absolute;
+  font-weight: 600;
+  color: #fff;
+  top: 17em;
+  left: 4em;
+  font-size: 1.5em;
+  line-height: 2em;
+}
+.info_block_title {
+  font-size: 3em;
+  position: absolute;
+  font-weight: 800;
+  color: #fff;
+  width: 12em;
+  top: 2em;
+  left: 1.5em;
+  line-height: 1.5em;
+}
+.main_info_block_video {
+  width: 100%;
+}
+
+.main_info_block {
+  position: relative;
+  width: 100%;
+}
+
+.info_block__content {
+  margin: auto 0;
+}
+.info_block__block_btn {
+  position: absolute;
+  top: 40em;
+  left: 3em;
+  z-index: 1;
+}
+
+.info_block__left-btn,
+.info_block__right-btn {
+  height: 3em;
+  margin: 0 1em;
+  font-size: 1em;
+  padding: 0 1em;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.info_block__left-btn {
+  background-color: #e60000;
+}
+
+.info_block__right-btn {
+  color: #000;
+}
+
+.info_block__right-btn:hover {
+  background: linear-gradient(to bottom, #ffffff -10%, #000000 150%);
+}
+.info_block__left-btn:hover {
+  background: linear-gradient(to bottom, #e60000 -10%, #000000 150%);
+}
+/* !MAIN BLOCK END */
+
+/* !BLOCK DESC START */
+
+.block-desc__top {
+  margin-top: 10em;
+}
+
+.info_block__block-desc {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 47em;
+  background: #1d1c1c;
+}
+
+.block-desc_top__title {
+  font-size: 3em;
+  text-align: center;
+  margin-top: -1em;
+  margin-bottom: 2em;
+}
+
+.block-desc_top__desc-list {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 2em;
+}
+
+.block-desc_top__desc-list-item > h3 {
+  margin-bottom: 1em;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+.block-desc_top__desc-list-item {
+  width: 30%;
+  margin: 0 1em;
+  text-align: center;
+  list-style-type: none;
+  font-weight: 600;
+  font-size: 1.4em;
+}
+/* !BLOCK DESC END */
