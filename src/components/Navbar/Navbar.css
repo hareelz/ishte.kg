@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-item {
+  font-size: 1em;
+  color: #fff;
+}
+
+.navbar-item:hover {
+  color: rgb(232, 232, 255);
+  text-shadow: 2px 2px 2px rgb(255, 255, 255);
+}
+
+.navbar-item:nth-child(4) {
+  margin-left: 18em;
+}
+
+.navbar {
+  width: 100vw;
+}
