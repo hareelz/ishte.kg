@@ -1,246 +1,127 @@
-// import * as React from "react";
-// import AppBar from "@mui/material/AppBar";
-// import Box from "@mui/material/Box";
-// import Toolbar from "@mui/material/Toolbar";
-// import IconButton from "@mui/material/IconButton";
-// import Typography from "@mui/material/Typography";
-// import Menu from "@mui/material/Menu";
-// import MenuIcon from "@mui/icons-material/Menu";
-// import Container from "@mui/material/Container";
-// import Avatar from "@mui/material/Avatar";
-// import Button from "@mui/material/Button";
-// import Tooltip from "@mui/material/Tooltip";
-// import MenuItem from "@mui/material/MenuItem";
-// import AdbIcon from "@mui/icons-material/Adb";
-// import ForumOutlinedIcon from "@mui/icons-material/ForumOutlined";
+// import React, { useDebugValue, useEffect } from "react";
+// import "./Navbar.css";
+// import { Link, useNavigate } from "react-router-dom";
 
-// import "../Navbar/Navbar.css";
-// import { Link } from "react-router-dom";
+// import { Avatar, IconButton, Tooltip } from "@mui/material";
+// import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
-// const pages = [
-//   "Главная Страница",
-//   "Как это работает?",
-//   "Поиск работы",
-//   "Посты",
-//   <ForumOutlinedIcon />,
-//   "Войти",
-// ];
-// const settings = ["Register", "Login", "Logout"];
-// const paths = ["/", "/info", "filter", "add-posts", "/auth"];
-
-// function Navbar() {
-//   const [anchorElNav, setAnchorElNav] = React.useState(null);
-//   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-//   const handleOpenNavMenu = (event) => {
-//     setAnchorElNav(event.currentTarget);
-//   };
-//   const handleOpenUserMenu = (event) => {
-//     setAnchorElUser(event.currentTarget);
-//   };
-
-//   const handleCloseNavMenu = () => {
-//     setAnchorElNav(null);
-//   };
-
-//   const handleCloseUserMenu = () => {
-//     setAnchorElUser(null);
-//   };
-
+// const Navbar = () => {
+//   const navigate = useNavigate();
 //   return (
-//     <AppBar
-//       className="navbar"
-//       position="static"
-//       sx={{ position: "fixed", zIndex: "2", background: "black" }}
-//     >
-//       <Container maxWidth="xl">
-//         <Toolbar disableGutters>
-//           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-//           <Typography
-//             variant="h6"
-//             noWrap
-//             component="a"
-//             href="#app-bar-with-responsive-menu"
-//             sx={{
-//               mr: 2,
-//               display: { xs: "none", md: "flex" },
-//               fontFamily: "monospace",
-//               fontWeight: 700,
-//               letterSpacing: ".3rem",
-//               color: "inherit",
-//               textDecoration: "none",
-//             }}
-//           >
-//             LOGO
-//           </Typography>
+//     <div className="nav-bcg">
+//       <a href="/" className="logo-home">
+//         <img
+//           src="https://www.f-cdn.com/assets/main/en/assets/freelancer-logo-light.svg"
+//           alt=""
+//           className="navbar-logo"
+//         />
+//       </a>
 
-//           <Box
-//             sx={{
-//               background: "black",
-//               flexGrow: 1,
-//               display: { xs: "flex", md: "none" },
-//             }}
-//           >
-//             <IconButton
-//               size="large"
-//               aria-label="account of current user"
-//               aria-controls="menu-appbar"
-//               aria-haspopup="true"
-//               onClick={handleOpenNavMenu}
-//               color="inherit"
-//             >
-//               <MenuIcon />
-//             </IconButton>
-//             <Menu
-//               id="menu-appbar"
-//               anchorEl={anchorElNav}
-//               anchorOrigin={{
-//                 vertical: "bottom",
-//                 horizontal: "left",
-//               }}
-//               keepMounted
-//               transformOrigin={{
-//                 vertical: "top",
-//                 horizontal: "left",
-//               }}
-//               open={Boolean(anchorElNav)}
-//               onClose={handleCloseNavMenu}
-//               sx={{
-//                 display: { xs: "block", md: "none" },
-//               }}
-//             >
-//               {pages.map((page) => (
-//                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-//                   <Typography textAlign="center">{page}</Typography>
-//                 </MenuItem>
-//               ))}
-//             </Menu>
-//           </Box>
-//           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-//           <Typography
-//             variant="h5"
-//             noWrap
-//             component="a"
-//             href="#app-bar-with-responsive-menu"
-//             sx={{
-//               mr: 2,
-//               display: { xs: "flex", md: "none" },
-//               flexGrow: 1,
-//               fontFamily: "monospace",
-//               fontWeight: 700,
-//               letterSpacing: ".3rem",
-
-//               textDecoration: "none",
-//             }}
-//           >
-//             LOGO
-//           </Typography>
-//           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-//             {pages.map((page, index) => (
-//               <Link to={paths[index]} className="navbar_item">
-//                 <Button
-//                   key={page}
-//                   onClick={handleCloseNavMenu}
-//                   sx={{
-//                     height: "5em",
-//                     my: 2,
-//                     color: "#fff",
-//                     background: "none",
-//                     margin: "auto 0",
-//                     display: "block",
-//                     marginLeft: "5em",
-//                     fontSize: ".7em",
-//                   }}
-//                 >
-//                   {page}
-//                 </Button>
-//               </Link>
-//             ))}
-//           </Box>
-
-//           <Box sx={{ flexGrow: 0 }}>
-//             <Tooltip title="">
-//               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-//                 <Avatar alt="" src="/static/images/avatar/2.jpg" />
-//               </IconButton>
-//             </Tooltip>
-//             {/* <Menu
-//               sx={{ mt: "45px" }}
-//               id="menu-appbar"
-//               anchorEl={anchorElUser}
-//               anchorOrigin={{
-//                 vertical: "top",
-//                 horizontal: "right",
-//               }}
-//               keepMounted
-//               transformOrigin={{
-//                 vertical: "top",
-//                 horizontal: "right",
-//               }}
-//               open={Boolean(anchorElUser)}
-//               onClose={handleCloseUserMenu}
-//             >
-//               {settings.map((setting) => (
-//                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-//                   <Typography textAlign="center">{setting}</Typography>
-//                 </MenuItem>
-//               ))}
-//             </Menu> */}
-//           </Box>
-//         </Toolbar>
-//       </Container>
-//     </AppBar>
+//       <div className="search">
+//         <input className="inp_search" type="text" />
+//         <button className="btn_search">Поиск</button>
+//       </div>
+//       <ul className="navbar_list">
+//         <li className="nav-list-item">
+//           <Link to={"/roster"} className="link-nav"></Link>
+//         </li>
+//         <li className="nav-list-item">
+//           <Link to={"/cardPage"} className="link-nav">
+//             Посты
+//           </Link>
+//         </li>
+//         <li className="nav-list-item">
+//           <Link to={"/admin"} className="link-nav">
+//             Admin
+//           </Link>
+//         </li>
+//         <li className="nav-list-item">
+//           <Link to={"/cartPage"} className="link-nav">
+//             Cart
+//           </Link>
+//         </li>
+//       </ul>
+//     </div>
 //   );
-// }
+// };
+
 // export default Navbar;
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
-import React, { useDebugValue, useEffect } from "react";
-import "./Navbar.css";
-import { Link, useNavigate } from "react-router-dom";
-
-import { Avatar, IconButton, Tooltip } from "@mui/material";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-
-const Navbar = () => {
-  const navigate = useNavigate();
+function NavScrollExample() {
   return (
-    <div className="nav-bcg">
-      <a href="/" className="logo-home">
-        <img
-          src="https://www.f-cdn.com/assets/main/en/assets/freelancer-logo-light.svg"
-          alt=""
-          className="navbar-logo"
-        />
-      </a>
+    <Navbar style={{}} expand="lg" className="bg-body-tertiary">
+      <Container
+        style={{
+          background: "#000",
+          margin: "0",
+        }}
+        fluid
+      >
+        <Navbar.Brand href="#">
+          <span className="block_logo">
+            <a href="/" className="logo-home">
+              <img
+                src="https://www.f-cdn.com/assets/main/en/assets/freelancer-logo-light.svg"
+                alt=""
+                className="navbar-logo"
+              />
+            </a>
+          </span>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+          <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: "100px" }}
+            navbarScroll
+          >
+            <Nav.Link
+              style={{ fontWeight: "600", color: "#fff" }}
+              href="/posts"
+            >
+              Посты
+            </Nav.Link>
+            <Nav.Link style={{ fontWeight: "600", color: "#fff" }} href="/chat">
+              Чат
+            </Nav.Link>
+            <NavDropdown
+              title="Войти"
+              id="navbarScrollingDropdown"
+              style={{
+                color: "#fff",
+                background: "#fff",
+                borderRadius: ".2em",
+                fontWeight: "600",
+              }}
+            >
+              <NavDropdown.Item href="/auth">Customer</NavDropdown.Item>
 
-      <div className="">
-        <input type="text" />
-        <button>найти</button>
-      </div>
-      <ul className="navbar_list">
-        <li className="nav-list-item">
-          <Link to={"/roster"} className="link-nav">
-            Roster
-          </Link>
-        </li>
-        <li className="nav-list-item">
-          <Link to={"/cardPage"} className="link-nav">
-            Buy Games
-          </Link>
-        </li>
-        <li className="nav-list-item">
-          <Link to={"/admin"} className="link-nav">
-            Admin
-          </Link>
-        </li>
-        <li className="nav-list-item">
-          <Link to={"/cartPage"} className="link-nav">
-            Cart
-          </Link>
-        </li>
-      </ul>
-    </div>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="/auth">Freelancer</NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link href="#" disabled>
+              user name
+            </Nav.Link>
+          </Nav>
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Поиск..."
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success">Найти</Button>
+          </Form>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
-};
+}
 
-export default Navbar;
+export default NavScrollExample;

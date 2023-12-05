@@ -1,13 +1,13 @@
 import React from "react";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavScrollExample from "./components/Navbar/Navbar";
 import MainRoutes from "./routes/MainRoutes";
-import SideBar from "./components/SideBar/SideBar";
-import Navbar from "./components/Navbar/Navbar";
 
 const App = () => {
   return (
     <div className="app">
-      <Navbar />
+      <NavScrollExample />
       <MainRoutes />
     </div>
   );
