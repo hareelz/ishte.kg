@@ -5,8 +5,9 @@
 }
 
 .navbar-item {
-  font-size: 1em;
+  font-size: em;
   color: #fff;
+  margin-left: -5em;
 }
 
 .navbar-item:hover {
@@ -15,7 +16,7 @@
 }
 
 .navbar-item:nth-child(4) {
-  margin-left: 18em;
+  margin-left: 10em;
 }
 
 .navbar {
