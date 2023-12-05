@@ -17,6 +17,9 @@ code {
   padding: 0;
   text-decoration: none;
 }
+.app {
+  margin-top: -0.5em;
+}
 .container {
   display: flex;
 }
